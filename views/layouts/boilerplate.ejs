@@ -41,5 +41,42 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/script.js"></script>
+
+    <script>
+      const toggleBtn = document.getElementById("darkToggle");
+      const toggleIcon = document.getElementById("toggleIcon");
+      const body = document.body;
+
+      const enableDarkMode = () => {
+        body.classList.add("dark-mode");
+        toggleIcon.classList.remove("fa-moon");
+        toggleIcon.classList.add("fa-sun");
+        localStorage.setItem("theme", "dark");
+      };
+
+      const disableDarkMode = () => {
+        body.classList.remove("dark-mode");
+        toggleIcon.classList.remove("fa-sun");
+        toggleIcon.classList.add("fa-moon");
+        localStorage.setItem("theme", "light");
+      };
+
+      toggleBtn.addEventListener("click", () => {
+        if (body.classList.contains("dark-mode")) {
+          disableDarkMode();
+        } else {
+          enableDarkMode();
+        }
+      });
+
+      window.onload = () => {
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") {
+          enableDarkMode();
+        } else {
+          disableDarkMode();
+        }
+      };
+    </script>
   </body>
 </html>

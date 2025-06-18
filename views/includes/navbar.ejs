@@ -53,6 +53,13 @@
         </form>
       </div>
       <div class="navbar-nav ms-auto">
+        <!-- DARK MODE TOGGLE BUTTON INSIDE NAVBAR -->
+        <li class="nav-item">
+          <button id="darkToggle" class="btn btn-outline-dark ms-3">
+            <i id="toggleIcon" class="fa-solid fa-moon"></i>
+          </button>
+        </li>
+
         <a class="nav-link" href="/listings/new">Airbnb your home</a>
         <% if(!currUser) { %>
         <a class="nav-link" href="/signup"><b>Sign Up</b></a>
